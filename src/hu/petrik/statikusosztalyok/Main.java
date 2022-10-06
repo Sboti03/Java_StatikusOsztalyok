@@ -35,18 +35,18 @@ public class Main {
         }
         System.out.println();
         for (int i = 0; i < 10; i++) {
-            System.out.println(Veletlen.velEmail("Sanyika"));
+            System.out.println(Veletlen.velEmail("SöüóőúűéáÉÁPŐndoor"));
         }
         System.out.println();
         for (int i = 0; i < 10; i++) {
             System.out.println(Veletlen.velMobil());
         }
         System.out.println();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println(Veletlen.velSportag());
         }
         System.out.println();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println(Veletlen.velSportegyesulet());
         }
 

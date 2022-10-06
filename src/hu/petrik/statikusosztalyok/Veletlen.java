@@ -2,6 +2,7 @@ package hu.petrik.statikusosztalyok;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.Normalizer;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -98,7 +99,17 @@ public final class Veletlen {
     }
 
     public static String velEmail(String nev) {
-        return nev +velEgesz(1, 100) + "@gmail.com";
+        nev = nev.toLowerCase();
+        nev = nev.replaceAll("\\s+","");
+        char[] nonCharacters = {'á', 'a', 'é', 'e', 'ö', 'o', 'ü', 'u', 'ó', 'o', 'ő', 'o', 'ú', 'u', 'ű', 'u'};
+        for (int i = 0; i < nev.toCharArray().length; i++) {
+            for (int j = 0; j < nonCharacters.length; j+=2) {
+                if (nonCharacters[j] == nev.toCharArray()[i]) {
+                    nev = nev.substring(0,i) + nonCharacters[j+1] + nev.substring(i+1);
+                }
+            }
+        }
+        return nev + velEgesz(1, 100) + "@gmail.com";
     }
 
     public static String velMobil() {
